@@ -1,0 +1,10 @@
+server:
+  port: 9999
+  
+swagger-resource: 
+  - resource: 
+    name: 
+    url: 
+  - resource: 
+    name: 
+    url: 

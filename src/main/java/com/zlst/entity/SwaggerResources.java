@@ -6,6 +6,9 @@ public class SwaggerResources {
 
 	private List<SwaggerProperties> swaggerPropertiesList;
 
+	public SwaggerResources() {
+	}
+
 	public List<SwaggerProperties> getSwaggerPropertiesList() {
 		return swaggerPropertiesList;
 	}

@@ -1,6 +1,5 @@
 package com.zlst.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -12,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.zlst.entity.SwaggerProperties;
-import com.zlst.entity.SwaggerResources;
+import com.zlst.config.ApiDocList;
+import com.zlst.config.SwaggerProperties;
 
 @RestController
 @RequestMapping("/translate")
 public class TranslateController {
 	
 	@Autowired
-	private SwaggerResources swaggerResources;
+	private ApiDocList apiDocList;
 	
 	private RestTemplate restTemplate;
 	
@@ -28,7 +27,7 @@ public class TranslateController {
 	
 	private Map<String, List<SwaggerProperties>> getParamMap() {
 		if(null == paramMap) {
-			List<SwaggerProperties> swaggerPropertiesList = swaggerResources.getSwaggerPropertiesList();
+			List<SwaggerProperties> swaggerPropertiesList = apiDocList.getList();
 			Map<String, List<SwaggerProperties>> collect = swaggerPropertiesList.stream().collect(Collectors.groupingBy(SwaggerProperties::getName));
 			return collect;
 		} else {

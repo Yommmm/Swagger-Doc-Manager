@@ -1,4 +1,4 @@
-package com.zlst.entity;
+package com.zlst.config;
 
 public class SwaggerProperties {
 

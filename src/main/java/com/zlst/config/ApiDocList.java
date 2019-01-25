@@ -21,7 +21,7 @@ public class ApiDocList {
 
 	@Override
 	public String toString() {
-		return "NovelList [list=" + list + "]";
+		return "ApiDocList [list=" + list + "]";
 	}
 
 }

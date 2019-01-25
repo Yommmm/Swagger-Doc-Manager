@@ -1,11 +1,3 @@
-spring:
-  application:
-    name: swagger-doc-manager
-
-  profiles: 
-    active: local
-
-# Eureka相关
 eureka:
   client:
     serviceUrl:
@@ -13,3 +5,17 @@ eureka:
       defaultZone: http://eureka.scdev.cs2025.cn/eureka/
   instance:
     prefer-ip-address: true
+    
+spring:
+  application:
+    name: swagger-doc-manager
+
+  cloud:
+    config:
+      discovery:
+        service-id: microservice-config-server
+        enabled: true
+      label: master
+      name: scm-swagger-doc-manager
+      profile: dev
+

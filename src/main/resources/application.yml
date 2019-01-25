@@ -1,14 +1,2 @@
 server:
   port: 9999
-  
-apidoclist:
-  list:
-    - name: BASE
-      url: http://gateway.scdev.cs2025.cn/gateway/api-supply-chain-base/v2/api-docs
-    - name: WMS
-      url: http://gateway.scdev.cs2025.cn/gateway/api-supply-chain-wms/v2/api-docs
-    - name: TMS
-      url: http://gateway.scdev.cs2025.cn/gateway/api-supply-chain-base/v2/api-docs
-    - name: OMS
-      url: http://gateway.scdev.cs2025.cn/gateway/api-supply-chain-base/v2/api-docs
-  

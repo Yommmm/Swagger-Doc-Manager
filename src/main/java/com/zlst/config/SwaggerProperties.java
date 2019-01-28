@@ -5,6 +5,8 @@ public class SwaggerProperties {
 	private String name;
 	
 	private String url;
+	
+	private boolean ribbon;
 
 	public String getName() {
 		return name;
@@ -20,6 +22,14 @@ public class SwaggerProperties {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public boolean isRibbon() {
+		return ribbon;
+	}
+
+	public void setRibbon(boolean ribbon) {
+		this.ribbon = ribbon;
 	}
 
 }

@@ -21,6 +21,7 @@ public class TranslateController {
 	@Autowired
 	private ApiDocList apiDocList;
 	
+	@Autowired
 	private RestTemplate restTemplate;
 	
 	private Map<String, List<SwaggerProperties>> paramMap;
@@ -35,21 +36,18 @@ public class TranslateController {
 		}
 	}
 	
-	private RestTemplate getRestTemplate() {
-		if(null == restTemplate) {
-			restTemplate = new RestTemplate();
-			return restTemplate;
-		} else {
-			return restTemplate;
-		}
-	}
 
 	@GetMapping("/api-docs/{serviceName}")
 	public Object getApiDocs(@PathVariable String serviceName) {
-		RestTemplate restTemplate = this.getRestTemplate();
 		Map<String, List<SwaggerProperties>> paramMap = this.getParamMap();
-		String url = paramMap.get(serviceName).get(0).getUrl();
-		return restTemplate.getForObject(url, String.class);
+		SwaggerProperties swaggerProperties = paramMap.get(serviceName).get(0);
+		String url = swaggerProperties.getUrl();
+		if(swaggerProperties.isRibbon()) {
+			return restTemplate.getForObject(url, String.class);
+		} else {
+			RestTemplate restTemplate4Else = new RestTemplate();
+			return restTemplate4Else.getForObject(url, String.class);
+		}
 	}
 	
 }

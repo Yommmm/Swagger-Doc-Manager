@@ -1,2 +1,6 @@
+spring:
+  application:
+    name: swagger-doc-manager
+
 server:
-  port: 9999
+  port: 80
